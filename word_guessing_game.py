@@ -9,7 +9,7 @@ class WordGuessGame:
         self.guesses = 0
         self.turns = turns
 
-def display_word(self):
+    def display_word(self):
             display = ''
             failed = 0
 
@@ -22,6 +22,17 @@ def display_word(self):
 
             print(display.strip())
             return failed
+
+    def play_turn(self):
+        guess = input("Guess a character: ")
+        self.guesses += guess
+
+        if guess not in self.word:
+            self.turns -= 1
+            print("Wrong")
+            print(f"You have {self.turns} more guesses.")
+        else:
+            print("Good guess!")
 
 guess_game = WordGuessGame
 guess_game.display_word()
