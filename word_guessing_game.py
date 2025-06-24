@@ -34,5 +34,22 @@ class WordGuessGame:
         else:
             print("Good guess!")
 
+    def check_win(self, failed):
+        if failed == 0:
+            print("You Win!")
+            print(f"The word is: {self.word}")
+            return True
+        return False
+
+    def check_loss(self):
+        if self.turns <= 0:
+            print("You Lose")
+            print(f"The word was: {self.word}")
+            return True
+        return False
+
 guess_game = WordGuessGame
 guess_game.display_word()
+guess_game.play_turn()
+guess_game.check_win()
+guess_game.check_loss()
