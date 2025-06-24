@@ -9,3 +9,19 @@ class WordGuessGame:
         self.guesses = 0
         self.turns = turns
 
+def display_word(self):
+            display = ''
+            failed = 0
+
+            for char in self.word:
+                if char in self.guesses:
+                    display += char + ' '
+                else:
+                    display += '_ '
+                    failed += 1
+
+            print(display.strip())
+            return failed
+
+guess_game = WordGuessGame
+guess_game.display_word()
